@@ -1,0 +1,319 @@
+/* Reset cơ bản */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #121212; /* Đen đậm */
+    color: #e0e0e0; /* Màu chữ sáng hơn cho dễ đọc */
+    line-height: 1.6;
+}
+
+.container {
+    width: 90%;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Header */
+header {
+    background-color: #1f1f1f; /* Hơi sáng hơn body một chút */
+    padding: 15px 0;
+    border-bottom: 1px solid #333;
+    position: fixed; /* Giữ header ở trên cùng */
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+#logo {
+    height: 50px; /* Điều chỉnh kích thước logo */
+    width: auto;
+}
+
+/* Main content - thêm padding-top để không bị header che */
+main {
+    padding-top: 80px; /* Bằng chiều cao header + một chút khoảng cách */
+}
+
+/* Hero Section */
+#hero {
+    text-align: center;
+    padding: 60px 0;
+}
+
+#hero h1 {
+    font-size: 2.8em; /* Tiêu đề to */
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 30px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+.main-image-container {
+    margin: 0 auto;
+    max-width: 700px; /* Giới hạn chiều rộng ảnh */
+    border: 3px solid #4CAF50; /* Màu viền đẹp */
+    border-radius: 10px; /* Bo góc viền */
+    padding: 10px; /* Khoảng cách giữa ảnh và viền */
+    background-color: #2a2a2a; /* Nền cho khung ảnh */
+    box-shadow: 0 0 15px rgba(76, 175, 80, 0.5); /* Hiệu ứng đổ bóng cho viền */
+    overflow: hidden; /* Đảm bảo ảnh không tràn ra ngoài nếu có bo góc */
+}
+
+.main-image-container img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 5px; /* Bo góc nhẹ cho ảnh bên trong */
+}
+
+/* Features Section */
+#features {
+    padding: 60px 0;
+    background-color: #1a1a1a; /* Nền khác biệt nhẹ */
+}
+
+.feature-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Responsive grid */
+    gap: 30px;
+}
+
+.feature-item {
+    background-color: #252525;
+    padding: 25px;
+    border-radius: 8px;
+    text-align: center;
+    border: 1px solid #333;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.feature-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+
+.feature-item h3 {
+    color: #4CAF50; /* Màu nhấn */
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+.feature-item p {
+    font-size: 0.95em;
+    color: #b0b0b0;
+}
+
+/* Tutorial Section */
+#tutorial {
+    padding: 60px 0;
+}
+
+#tutorial h2 {
+    text-align: center;
+    font-size: 2.2em;
+    margin-bottom: 40px;
+    color: #ffffff;
+}
+
+.tutorial-content {
+    background-color: #1f1f1f;
+    padding: 30px;
+    border-radius: 8px;
+    border: 1px solid #333;
+    display: flex; /* Sắp xếp video và mô tả */
+    flex-wrap: wrap; /* Cho phép xuống dòng trên màn hình nhỏ */
+    gap: 30px;
+}
+
+.video-wrapper {
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+    height: 0;
+    overflow: hidden;
+    flex: 2; /* Video chiếm nhiều không gian hơn */
+    min-width: 300px; /* Đảm bảo video không quá nhỏ */
+    border: 2px solid #444;
+    border-radius: 5px;
+}
+
+.video-wrapper iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.video-description {
+    flex: 1; /* Mô tả chiếm phần còn lại */
+    min-width: 250px;
+}
+
+.video-description h3 {
+    font-size: 1.6em;
+    color: #4CAF50;
+    margin-bottom: 15px;
+}
+
+/* Pricing Section */
+#pricing {
+    padding: 60px 0;
+    background-color: #1a1a1a;
+}
+
+#pricing h2 {
+    text-align: center;
+    font-size: 2.2em;
+    margin-bottom: 40px;
+    color: #ffffff;
+}
+
+.pricing-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+.pricing-package {
+    background-color: #252525;
+    padding: 30px;
+    border-radius: 8px;
+    text-align: center;
+    border: 1px solid #333;
+    display: flex;
+    flex-direction: column; /* Sắp xếp nội dung theo chiều dọc */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.pricing-package:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+
+.pricing-package.popular {
+    border: 2px solid #4CAF50;
+    position: relative; /* Để đặt tag "Phổ biến" nếu muốn */
+}
+/* Ví dụ tag "Phổ biến"
+.pricing-package.popular::before {
+    content: "Phổ Biến";
+    position: absolute;
+    top: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #4CAF50;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 0.8em;
+    font-weight: bold;
+} */
+
+
+.pricing-package h3 {
+    font-size: 1.8em;
+    color: #4CAF50;
+    margin-bottom: 15px;
+}
+
+.pricing-package .price {
+    font-size: 2em;
+    font-weight: bold;
+    color: #ffffff;
+    margin-bottom: 20px;
+}
+
+.pricing-package .price span {
+    font-size: 0.6em;
+    font-weight: normal;
+    color: #b0b0b0;
+}
+
+.pricing-package ul {
+    list-style: none;
+    margin-bottom: 25px;
+    padding-left: 0;
+    flex-grow: 1; /* Đẩy nút xuống dưới */
+}
+
+.pricing-package ul li {
+    margin-bottom: 10px;
+    color: #b0b0b0;
+}
+
+.btn {
+    display: inline-block;
+    background-color: #333;
+    color: #e0e0e0;
+    padding: 12px 25px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    border: 1px solid #555;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background-color: #4CAF50;
+    color: #ffffff;
+    border-color: #4CAF50;
+}
+
+.btn-primary { /* Dành cho gói nổi bật */
+    background-color: #4CAF50;
+    color: #ffffff;
+    border-color: #4CAF50;
+}
+.btn-primary:hover {
+    background-color: #3e8e41;
+    border-color: #3e8e41;
+}
+
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 30px 0;
+    background-color: #1f1f1f;
+    border-top: 1px solid #333;
+    margin-top: 40px;
+}
+
+footer p {
+    font-size: 0.9em;
+    color: #888;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    #hero h1 {
+        font-size: 2.2em;
+    }
+    .tutorial-content {
+        flex-direction: column; /* Video và mô tả xếp chồng lên nhau */
+    }
+    .video-wrapper, .video-description {
+        flex: none; /* Bỏ flex sizing */
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    #hero h1 {
+        font-size: 1.8em;
+    }
+    .container {
+        width: 95%;
+        padding: 0 10px;
+    }
+    .feature-grid, .pricing-grid {
+        grid-template-columns: 1fr; /* 1 cột trên màn hình nhỏ */
+    }
+}
